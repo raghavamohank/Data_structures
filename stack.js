@@ -1,24 +1,44 @@
-let arr;
-let top = -1;
-
-class stack {
-    if(tops)
-    push(x) {
-    top++;
-    arr[top] = x;
+class Stack {
+    constructor()
+    {
+        this.items = [];
     }
 
+    // Push
+    push(element) {
+        this.items.push(element);
+    }
+
+    // Pop
     pop() {
-        if(top = -1){ 
-        console.log('Error : No elements to pop');
-        return;
-        }
-        top--;
+        if(this.items.length == 0)
+        return "Underflow";
+        return this.items.pop();
     }
 
-    Top() {
-        return A[top];
+    // Peek
+    peek() {
+        return this.items[this.items.length-1];
+    }
+
+    // isEmpty
+    isEmpty() {
+        return this.items.length == 0;
+    }
+
+    printStack() {
+        var str = "";
+        for(let i =0; i< this.items.length;i++) 
+            str += this.items[i] + " ";
+            return str;
+        
     }
 }
-const s = new stack();
-s.push(3);
+
+var stack = new Stack();
+
+stack.push(3);
+stack.push(6);
+stack.push(9);
+stack.pop();
+console.log(stack.printStack());
