@@ -42,6 +42,22 @@ function quicksort(items,left,right) {
     return items;
 }
 
-var items = [5,3,7,6,2,9];
+var items = [5,3,7,2,4,9,1];
 var sortedArray = quicksort(items,0, items.length-1);
 console.log(sortedArray);
+
+function trigger()
+
+{
+
+document.getElementById("hover").addEventListener("mouseover", popup);
+
+function popup()
+
+{
+
+alert("Welcome to my WebPage!!!");
+
+}   
+
+}

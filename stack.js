@@ -40,5 +40,5 @@ var stack = new Stack();
 stack.push(3);
 stack.push(6);
 stack.push(9);
-stack.pop();
+stack.push(12);
 console.log(stack.printStack());

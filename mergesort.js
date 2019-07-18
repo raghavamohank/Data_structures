@@ -1,23 +1,44 @@
-class Node {
-    constructor(data,next = null) {
-        this.data = data;
-        this.next = next;
+class Stack {
+    constructor()
+    {
+        this.items = [];
+    }
+
+    // Push
+    push(element) {
+        this.items.push(element);
+    }
+
+    // Pop
+    pop() {
+        if(this.items.length == 0)
+        return "Underflow";
+        return this.items.pop();
+    }
+
+    // Peek
+    peek() {
+        return this.items[this.items.length-1];
+    }
+
+    // isEmpty
+    isEmpty() {
+        return this.items.length == 0;
+    }
+
+    printStack() {
+        var str = "";
+        for(let i =0; i< this.items.length;i++) 
+            str += this.items[i] + " ";
+            return str;
+        
     }
 }
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-        this.size = 0;
-    }
+var stack = new Stack();
 
-// Insert first node
-insertFirst(data) {
-    this.head = new Node(data, this.head);
-    }
-
-}
-
-const ll = new LinkedList();
-
-ll.insertFirst(100);
+stack.push(3);
+stack.push(6);
+stack.push(9);
+stack.pop();
+console.log(stack.printStack());
